@@ -17,7 +17,7 @@ import pandas as pd
 from reverso.forecast import load_checkpoint
 
 try:
-    from torch.cuda.amp import autocast as autocast_fp
+    from torch.amp import autocast as autocast_fp
 except Exception:
     autocast_fp = None
 
@@ -164,7 +164,7 @@ class ReversoPredictor:
 
             if autocast_fp is not None and self.use_amp and use_bf16:
                 try:
-                    with autocast_fp(dtype=torch.bfloat16):
+                    with autocast_fp('cuda', dtype=torch.bfloat16):
                         outputs = self.model(x_in, x_mark, y_mark)
                 except Exception:
                     outputs = self.model(x_in, x_mark, y_mark)

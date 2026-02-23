@@ -80,7 +80,7 @@ def forecast(
         x_mark = torch.zeros_like(x_in)
 
         if use_amp and device.type == "cuda":
-            with torch.cuda.amp.autocast(dtype=torch.bfloat16):
+            with torch.amp.autocast("cuda", dtype=torch.bfloat16):
                 outputs = model(x_in, x_mark, y_mark)
         else:
             outputs = model(x_in, x_mark, y_mark)
