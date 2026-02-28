@@ -31,3 +31,5 @@ push.sh
 .ruff_cache/
 .pytest_cache/
 .ipynb_checkpoints/
+logs/
+scripts/

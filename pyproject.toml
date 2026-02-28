@@ -27,4 +27,4 @@ examples = [
 Repository = "https://github.com/shinfxh/reverso"
 
 [tool.setuptools.packages.find]
-include = ["reverso*"]
+include = ["reverso*", "reverso_torch*"]

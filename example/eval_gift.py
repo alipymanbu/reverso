@@ -14,7 +14,14 @@ import numpy as np
 import torch
 import pandas as pd
 
-from reverso.forecast import load_checkpoint
+import sys as _sys
+if "--torch-native" in _sys.argv:
+    _sys.argv.remove("--torch-native")
+    from reverso_torch.forecast import load_checkpoint
+    _BACKEND = "reverso_torch"
+else:
+    from reverso.forecast import load_checkpoint
+    _BACKEND = "reverso"
 
 try:
     from torch.amp import autocast as autocast_fp
@@ -80,7 +87,10 @@ class ReversoPredictor:
             main_module=str(main_module),
         )
 
-        from reverso import model as model_impl
+        if _BACKEND == "reverso_torch":
+            from reverso_torch import model as model_impl  # noqa: F811
+        else:
+            from reverso import model as model_impl  # noqa: F811
         try:
             self.model = model_impl.Model(args).to(self.device)
         except RuntimeError as e:
