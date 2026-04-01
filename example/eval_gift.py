@@ -60,6 +60,7 @@ class ReversoPredictor:
         use_amp: int = 1,
         downsample_factor: int = 1,
         force_flip_invariance: bool = False,
+        use_output_pe: bool = False,
     ):
         self.device = torch.device(device if torch.cuda.is_available() else "cpu")
         self.prediction_length = int(prediction_length)
@@ -85,6 +86,7 @@ class ReversoPredictor:
             state_weaving=int(state_weaving),
             gating_kernel_size=int(gating_kernel_size),
             main_module=str(main_module),
+            use_output_pe=bool(use_output_pe),
         )
 
         if _BACKEND == "reverso_torch":
@@ -304,6 +306,7 @@ def main():
     STATE_WEAVING = int(json_cfg.get("state_weaving", 1))
     GATING_KERNEL_SIZE = int(json_cfg.get("gating_kernel_size", 3))
     MAIN_MODULE = str(json_cfg.get("main_module", "conv,attn,conv,attn,conv,attn,conv,attn"))
+    USE_OUTPUT_PE = bool(json_cfg.get("use_output_pe", False))
 
     DEVICE = "cuda"
     NUM_SAMPLES = 100
@@ -403,6 +406,7 @@ def main():
                 state_weaving=STATE_WEAVING,
                 gating_kernel_size=GATING_KERNEL_SIZE,
                 main_module=MAIN_MODULE,
+                use_output_pe=USE_OUTPUT_PE,
                 num_samples=NUM_SAMPLES,
                 batch_size=BATCH_SIZE,
                 use_amp=USE_AMP,

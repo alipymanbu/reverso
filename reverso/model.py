@@ -1,12 +1,30 @@
 """
 Reverso: conv-attention hybrid for time series forecasting.
 """
+import math
 import torch
 from torch import nn
 import torch.nn.functional as F
 from flashfftconv import FlashFFTConv
 from fla.layers import DeltaNet
 from typing import Any
+
+
+class PositionalEmbedding(nn.Module):
+    def __init__(self, d_model, max_len=6500):
+        super().__init__()
+        pe = torch.zeros(max_len, d_model).float()
+        pe.require_grad = False
+        position = torch.arange(0, max_len).float().unsqueeze(1)
+        div_term = (torch.arange(0, d_model, 2).float()
+                    * -(math.log(10000.0) / d_model)).exp()
+        pe[:, 0::2] = torch.sin(position * div_term)
+        pe[:, 1::2] = torch.cos(position * div_term)
+        pe = pe.unsqueeze(0)
+        self.register_buffer('pe', pe)
+
+    def forward(self, x):
+        return self.pe[:, :x.size(1)]
 
 
 class Gating(nn.Module):
@@ -157,6 +175,12 @@ class Model(nn.Module):
         self.value_proj = nn.Linear(self.d_model, self.d_model)
         self.out_proj = nn.Linear(self.d_model, 1)
 
+        self.use_output_pe = getattr(configs, 'use_output_pe', False)
+        if self.use_output_pe:
+            pe_max_len = self.seq_len + self.output_token_len
+            self.output_position_embedding = PositionalEmbedding(self.d_model, max_len=pe_max_len)
+            self.post_pe_q_proj = nn.Linear(self.d_model, self.d_model)
+
     def forward(self, x, x_mark=None, y_mark=None, **kwargs: Any):
         B, L, C = x.shape
 
@@ -176,8 +200,17 @@ class Model(nn.Module):
         q = self.simple_q_proj(temp_out)
 
         dec_out_perm = dec_out.permute(0, 2, 1)
-        k = self.key_proj(dec_out_perm)
-        v = self.value_proj(dec_out_perm)
+
+        if self.use_output_pe:
+            full_hidden = torch.cat([dec_out_perm, q], dim=1)
+            full_hidden = full_hidden + self.output_position_embedding(full_hidden)
+            dec_out_pe = full_hidden[:, :dec_out_perm.shape[1], :]
+            q = self.post_pe_q_proj(full_hidden[:, dec_out_perm.shape[1]:, :])
+            k = self.key_proj(dec_out_pe)
+            v = self.value_proj(dec_out_pe)
+        else:
+            k = self.key_proj(dec_out_perm)
+            v = self.value_proj(dec_out_perm)
 
         attn = F.scaled_dot_product_attention(q, k, v)
         dec_out = self.out_proj(attn)
