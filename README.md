@@ -1,160 +1,29 @@
+# Reverso
 
-<h1 align="center">Reverso</h1>
+本仓库是「Reverso」的安卓版本获取入口，附使用资料索引。
 
-<h3 align="center">
-  Efficient time-series foundation models for zero-shot forecasting.
-</h3>
+## 安装文件资源（夸克网盘）
 
-<p align="center">
-  <a href="https://arxiv.org/abs/2602.17634">Paper</a> •
-  <a href="https://github.com/shinfxh/reverso">GitHub</a> •
-  <a href="https://huggingface.co/shinfxh/reverso">Hugging Face</a>
-</p>
+> **Reverso 安装文件资源（夸克网盘）**：[https://pan.quark.cn/s/4499800555fe](https://pan.quark.cn/s/4499800555fe)
 
-<p align="center">
-  By combining long convolutions with linear RNN layers, Reverso matches the performance of transformer-based models that are over <b>100x larger</b>.
-</p>
+## 官方项目
 
-## Key Results
+- 上游项目：[shinfxh/reverso](https://github.com/shinfxh/reverso)
 
-<p align="center">
-  <img src="figures/gift_eval_pareto_overall.png" width="800">
-</p>
+## 更多资料
 
-Evaluated on [Gift-Eval](https://github.com/SalesforceAIResearch/gift-eval), a comprehensive time-series forecasting benchmark spanning 97 tasks within 23 datasets across 7 domains.
+- [下载与安装教程](https://github.com/alipymanbu/Android/blob/master/%E5%AE%98%E7%BD%91%E7%89%88APP%E4%B8%8B%E8%BD%BD/Reverso%E5%AE%98%E7%BD%91%E7%89%88%E6%9C%AC/%E4%B8%8B%E8%BD%BD%E4%B8%8E%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B.md)
+- [免费版和高级版有什么区别](https://github.com/alipymanbu/Android/blob/master/%E5%AE%98%E7%BD%91%E7%89%88APP%E4%B8%8B%E8%BD%BD/Reverso%E5%AE%98%E7%BD%91%E7%89%88%E6%9C%AC/%E5%85%8D%E8%B4%B9%E7%89%88%E5%92%8C%E9%AB%98%E7%BA%A7%E7%89%88%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB.md)
+- [单词和整句怎么翻译](https://github.com/alipymanbu/Android/blob/master/%E5%AE%98%E7%BD%91%E7%89%88APP%E4%B8%8B%E8%BD%BD/Reverso%E5%AE%98%E7%BD%91%E7%89%88%E6%9C%AC/%E5%8D%95%E8%AF%8D%E5%92%8C%E6%95%B4%E5%8F%A5%E6%80%8E%E4%B9%88%E7%BF%BB%E8%AF%91.md)
+- [常见问题与排查](https://github.com/alipymanbu/Android/blob/master/%E5%AE%98%E7%BD%91%E7%89%88APP%E4%B8%8B%E8%BD%BD/Reverso%E5%AE%98%E7%BD%91%E7%89%88%E6%9C%AC/%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E4%B8%8E%E6%8E%92%E6%9F%A5.md)
+- [拍照翻译与语音输入怎么用](https://github.com/alipymanbu/Android/blob/master/%E5%AE%98%E7%BD%91%E7%89%88APP%E4%B8%8B%E8%BD%BD/Reverso%E5%AE%98%E7%BD%91%E7%89%88%E6%9C%AC/%E6%8B%8D%E7%85%A7%E7%BF%BB%E8%AF%91%E4%B8%8E%E8%AF%AD%E9%9F%B3%E8%BE%93%E5%85%A5%E6%80%8E%E4%B9%88%E7%94%A8.md)
+- [支持哪些语言和语言对](https://github.com/alipymanbu/Android/blob/master/%E5%AE%98%E7%BD%91%E7%89%88APP%E4%B8%8B%E8%BD%BD/Reverso%E5%AE%98%E7%BD%91%E7%89%88%E6%9C%AC/%E6%94%AF%E6%8C%81%E5%93%AA%E4%BA%9B%E8%AF%AD%E8%A8%80%E5%92%8C%E8%AF%AD%E8%A8%80%E5%AF%B9.md)
+- [收藏夹与词汇表怎么管理](https://github.com/alipymanbu/Android/blob/master/%E5%AE%98%E7%BD%91%E7%89%88APP%E4%B8%8B%E8%BD%BD/Reverso%E5%AE%98%E7%BD%91%E7%89%88%E6%9C%AC/%E6%94%B6%E8%97%8F%E5%A4%B9%E4%B8%8E%E8%AF%8D%E6%B1%87%E8%A1%A8%E6%80%8E%E4%B9%88%E7%AE%A1%E7%90%86.md)
+- [注册登录与多设备同步](https://github.com/alipymanbu/Android/blob/master/%E5%AE%98%E7%BD%91%E7%89%88APP%E4%B8%8B%E8%BD%BD/Reverso%E5%AE%98%E7%BD%91%E7%89%88%E6%9C%AC/%E6%B3%A8%E5%86%8C%E7%99%BB%E5%BD%95%E4%B8%8E%E5%A4%9A%E8%AE%BE%E5%A4%87%E5%90%8C%E6%AD%A5.md)
+- [离线词典与离线可用范围](https://github.com/alipymanbu/Android/blob/master/%E5%AE%98%E7%BD%91%E7%89%88APP%E4%B8%8B%E8%BD%BD/Reverso%E5%AE%98%E7%BD%91%E7%89%88%E6%9C%AC/%E7%A6%BB%E7%BA%BF%E8%AF%8D%E5%85%B8%E4%B8%8E%E7%A6%BB%E7%BA%BF%E5%8F%AF%E7%94%A8%E8%8C%83%E5%9B%B4.md)
+- [背单词和测验游戏怎么用](https://github.com/alipymanbu/Android/blob/master/%E5%AE%98%E7%BD%91%E7%89%88APP%E4%B8%8B%E8%BD%BD/Reverso%E5%AE%98%E7%BD%91%E7%89%88%E6%9C%AC/%E8%83%8C%E5%8D%95%E8%AF%8D%E5%92%8C%E6%B5%8B%E9%AA%8C%E6%B8%B8%E6%88%8F%E6%80%8E%E4%B9%88%E7%94%A8.md)
+- [全部软件目录](https://github.com/alipymanbu/Android/blob/master/%E5%85%A8%E9%83%A8%E8%BD%AF%E4%BB%B6%E7%9B%AE%E5%BD%95.md)
 
-| Model | Params | Gift-Eval MASE |
-|---|---|---|
-| **Reverso** | 2.6M | **0.711** |
-| Reverso-Small | 550K | 0.726 |
-| Reverso-Nano | 200K | 0.760 |
+---
 
-For reference, Xihe-Max (1.5B params) achieves 0.711 and TimesFM-2.5 (200M params) achieves 0.705 on the same benchmark.
-
-## Installation
-
-```bash
-pip install -r requirements.txt
-pip install --no-build-isolation git+https://github.com/HazyResearch/flash-fft-conv.git#subdirectory=csrc/flashfftconv
-pip install --no-build-isolation git+https://github.com/HazyResearch/flash-fft-conv.git
-pip install -e .
-```
-
-### Requirements
-
-- Python >= 3.11
-- PyTorch 2.6.0
-- CUDA-compatible GPU
-- [FlashFFTConv](https://github.com/HazyResearch/flash-fft-conv)
-- [flash-linear-attention](https://github.com/sustcsonglin/flash-linear-attention)
-
-## Model Architecture
-
-<p align="center">
-  <img src="figures/new_arch.png" width="800">
-</p>
-
-Reverso uses a hybrid architecture that interleaves:
-1. **Long convolution layers** ([FlashFFTConv](https://github.com/HazyResearch/flash-fft-conv)) with gated short convolutions
-2. **DeltaNet layers** for modeling sequential dependencies
-3. **MLP layers** for channel mixing
-4. **Attention-based decoder head** for producing the final forecast
-
-Input sequences are normalized to [0, 1] and processed point-wise (no patching). The model predicts 48 time steps at a time and rolls out autoregressively for longer horizons.
-
-| Config | Params | Layers | d_model |
-|---|---|---|---|
-| Reverso | 2.6M | 8 | 128 |
-| Reverso-Small | 550K | 4 | 64 |
-| Reverso-Nano | 200K | 2 | 32 |
-
-The modeling code is in [`reverso/`](reverso/).
-
-## Quick Start
-
-```python
-import torch
-from reverso import load_model, forecast
-
-model, cfg = load_model(
-    "checkpoints/reverso_small/checkpoint.pth",
-    "checkpoints/reverso_small/args.json",
-    device="cuda",
-)
-
-context = torch.full((1, 2048, 1), 5.0, device="cuda")  # (batch, seq_len, 1)
-predictions = forecast(
-    model, context,
-    prediction_length=96,
-    seq_len=cfg.seq_len,
-    output_token_len=cfg.output_token_len,
-)
-print(predictions.shape)  # (1, 96, 1)
-```
-
-## Examples
-
-Install the example dependencies first:
-
-```bash
-pip install -r example/requirements.txt
-```
-
-### Forecast Demo
-
-Run Reverso on synthetic signals (constant, linear, sine, sawtooth, square):
-
-```bash
-python example/forecast_demo.py --signal all
-```
-
-Use `--signal sine` to run a single signal, or `--list` to see all options.
-
-### Gift-Eval Benchmark
-
-To reproduce the benchmark results, first follow the [Gift-Eval setup instructions](https://github.com/SalesforceAIResearch/gift-eval) to install the package and download the data. By default the script looks for the data in `data/` at the repository root. You can override this by setting the `GIFT_EVAL` environment variable:
-
-```bash
-export GIFT_EVAL=/path/to/gift-eval-data
-```
-
-Then run:
-
-```bash
-python example/eval_gift.py \
-    --checkpoint checkpoints/reverso_small/checkpoint.pth \
-    --output-dir results/ \
-    --force-flip-invariance
-```
-
-> **Note:** Dependencies within Gift-Eval may conflict with those in Reverso. If you encounter issues, try upgrading `huggingface_hub`:
-> ```bash
-> pip install --upgrade huggingface_hub
-> ```
-> **Note:** While running this benchmark, it is recommended to use flip invariance, but this requires two forward passes of the model. The inference speed is also not fully optimized and could be further sped up. 
-
-## Available Checkpoints
-
-| Model | Status | Path |
-|---|---|---|
-| Reverso-Small (550K) | Available | `checkpoints/reverso_small/` |
-| Reverso (2.6M) | Coming soon | — |
-| Reverso-Nano (200K) | Coming soon | — |
-
-## Citation
-
-```bibtex
-@misc{fu2026reversoefficienttimeseries,
-      title={Reverso: Efficient Time Series Foundation Models for Zero-shot Forecasting},
-      author={Xinghong Fu and Yanhong Li and Georgios Papaioannou and Yoon Kim},
-      year={2026},
-      eprint={2602.17634},
-      archivePrefix={arXiv},
-      primaryClass={cs.LG},
-      url={https://arxiv.org/abs/2602.17634},
-}
-```
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
+> 本仓库由上游项目 fork 而来，原始说明见[上游仓库](https://github.com/shinfxh/reverso)。
